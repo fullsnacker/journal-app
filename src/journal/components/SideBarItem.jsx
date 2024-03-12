@@ -10,7 +10,13 @@ import {
 import { TurnedInNot } from '@mui/icons-material';
 import { setActiveNote } from '../../store/journal';
 
-export const SideBarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
+export const SideBarItem = ({
+	title = 'Nuevo...',
+	body,
+	id,
+	date,
+	imageUrls = []
+}) => {
 	const dispatch = useDispatch();
 
 	const onClickNote = () => {
@@ -18,7 +24,10 @@ export const SideBarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
 	};
 
 	const newTitle = useMemo(() => {
-		return title.length > 17 ? title.substring(0, 17) + '...' : title;
+		<ListItemText secondary={body} />;
+		return title.length > 17
+			? title.substring(0, 17).toUpperCase() + '...'
+			: title.toUpperCase();
 	}, [title]);
 
 	return (
@@ -28,8 +37,8 @@ export const SideBarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
 					<TurnedInNot />
 				</ListItemIcon>
 				<Grid container>
-					<ListItemText primary={newTitle} />
-					<ListItemText secondary={body} />
+					<ListItemText primary={new Date(date).toLocaleString('es')} />
+					<ListItemText secondary={`${newTitle} - ${body}`} />
 				</Grid>
 			</ListItemButton>
 		</ListItem>

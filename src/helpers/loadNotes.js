@@ -12,5 +12,9 @@ export const loadNotes = async (uid = '') => {
 		notes.push({ id: doc.id, ...doc.data() });
 	});
 
+	notes.sort(function (a, b) {
+		return new Date(a.date) - new Date(b.date);
+	});
+
 	return notes;
 };
