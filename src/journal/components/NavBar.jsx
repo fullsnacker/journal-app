@@ -35,7 +35,7 @@ export const NavBar = ({ drawerWidth = 240 }) => {
 				>
 					<Typography variant="h6" noWrap component="div">
 						{' '}
-						JournalApp{' '}
+						Snournal (Journal App){' '}
 					</Typography>
 
 					<IconButton color="error" onClick={onLogout}>

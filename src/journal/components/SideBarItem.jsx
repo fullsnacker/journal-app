@@ -38,7 +38,7 @@ export const SideBarItem = ({
 				</ListItemIcon>
 				<Grid container>
 					<ListItemText primary={new Date(date).toLocaleString('es')} />
-					<ListItemText secondary={`${newTitle} - ${body}`} />
+					<ListItemText secondary={`${newTitle}`} />
 				</Grid>
 			</ListItemButton>
 		</ListItem>
